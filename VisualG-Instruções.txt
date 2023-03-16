@@ -1,0 +1,25 @@
+VisualG
+------------------------------
+
+Inteiro : 1 3 -5 198 0
+
+Real : 0.5 5.0 9.8 -77.3 3.1415
+
+Caracatere : "Gustavo" "Algorismo" "123"
+
+Logico : Verdadeiro ou Falso
+
+------------------------------
+          Indentificadores
+
+1. Deve começar com letra
+2. Os próximos podem ser letras ou números
+3. Não pode conter espaços em branco
+4. Não pode conter letras com acentos
+5. Não pode utilizar nenhum símbolo, exeto _
+6. Não pode ser uma palabra reservada
+
+------------------------------
+
+
+
