@@ -8,11 +8,11 @@ i: inteiro
 
 inicio
 para i de 1 ate 10 faca
-   escreva("Digite um número para a posição ", i, ": ")
+   escreva("Digite um numero para a posicao ", i, ": ")
    leia(A[i])
 fimpara
 
-escreva("Digite um número para multiplicar o vetor A: ")
+escreva("Digite um numero para multiplicar o vetor A: ")
 leia(X)
 
 para i de 1 ate 10 faca
