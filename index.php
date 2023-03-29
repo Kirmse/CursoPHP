@@ -8,7 +8,7 @@
     <style> 
         /* tag style é um dos lugares para cogificar css */
         h1{
-            color:blueviolet;
+            color:white;
             background-color:antiquewhite;
             text-align: center;
         }
