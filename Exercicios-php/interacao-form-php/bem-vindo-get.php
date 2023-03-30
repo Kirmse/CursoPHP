@@ -6,6 +6,6 @@ $idade = $_GET["idade"];
 
 echo "Bem Vindo ao mundo PHP $nome <br>";
 echo "E-mail registrado: $email <br>";
-echo "Sua idade é: $idade <br>";
+echo "Idade: $idade <br>";
 
 ?>
