@@ -9,3 +9,6 @@ echo "E-mail registrado: $email <br>";
 echo "Idade: $idade <br>";
 
 ?>
+
+
+<a href="index.html">Voltar </a>
