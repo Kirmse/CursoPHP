@@ -21,6 +21,11 @@
     echo "Olá Mundo PHP";
     ?>
     <br>
+    <br>
     <a href="Exercicios-php/interacao-form-php/index.html">Exemplo interacao Form PHP</a> 
+    <br>
+    <a href="Exercicios-php/string-functions.php">Exemplos das functions de String</a>
+    <br>
+    <a href="Exercicios-php/interacao-form-php/form-com-validacao.php">Exemplos do formulário com validação</a>
 </body>
 </html>
