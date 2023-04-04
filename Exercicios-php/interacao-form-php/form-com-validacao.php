@@ -35,7 +35,6 @@
         $dado = htmlspecialchars($dado);
         $dado = trim($dado);
         $dado = stripcslashes($dado);
-
         return $dado;
     }
 
