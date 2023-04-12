@@ -7,7 +7,7 @@
 <body>
 <?php
 include 'conectar.php';
-$id = $nome = $email = $cpf = "";
+$id = $nome = $email = $cpf = $sexo = "";
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if (array_key_exists('id',$_GET)){
         $id = $_GET['id'];
@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $nome = $pessoa['nome'];
         $email = $pessoa['email'];
         $cpf = $pessoa['cpf'];
+        $sexo = $pessoa['sexo'];
     }
     if (array_key_exists('apagar',$_GET)){
         $apagar = $_GET['apagar'];
@@ -27,11 +28,15 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <input type="hidden" name="id"  value="<?php echo $id; ?>">
     <h1>Formulário de Pessoa</h1>
     Nome: <br>
-    <input type="text" name="nome" value="<?php echo $nome; ?>"><br>
+    <input type="text" name="nome" value="<?php echo $nome; ?>" required><br>
     E-mail: <br>
-    <input type="text" name="email" value="<?php echo $email; ?>"><br>
+    <input type="text" name="email" value="<?php echo $email; ?>" required><br>
     CPF: <br>
-    <input type="number" name="cpf" value="<?php echo $cpf; ?>"><br>
+    <input type="number" name="cpf" value="<?php echo $cpf; ?>" required><br>
+    Sexo: <br>
+    <input type="radio" name="sexo" value="m" required<?php if($sexo == "m") echo "checked"; ?>>Masculino
+    <input type="radio" name="sexo" value="f" required<?php if($sexo == "f") echo "checked"; ?>>Feminino
+    <br>
     <br>
     <input type="submit" value="Gravar">
     <a href="form-pessoa.php">
@@ -48,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $cpf = $_POST['cpf'];
+    $sexo = $_POST['sexo'];
 
     $id = $_POST['id'];
     if($id == ''){
-        $msg = incluir($nome, $email, $cpf);
+       $msg = incluir($nome, $email, $cpf, $sexo);
     } else {
-        $msg = alterar($id, $nome, $email, $cpf);
+       $msg = alterar($id, $nome, $email, $cpf, $sexo);
     }
     
     echo $msg;
@@ -61,12 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 <br>
+<br>
 <table border="1">
     <tr>
         <th>Id</th>
         <th>Nome</th>
         <th>Email</th>
         <th>CPF</th>
+        <th>Sexo</th>
+        
     </tr>
     <?php
     $dados = listar();
@@ -76,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<td>".$linha['nome']."</td>";
         echo "<td>".$linha['email']."</td>";
         echo "<td>".$linha['cpf']."</td>";
+        echo "<td>".$linha['sexo']."</td>";
         echo "<td><a href='form-pessoa.php?id=".$linha['id']."'>Editar</a></td>";
         echo "<td><a href='form-pessoa.php?apagar=".$linha['id']."'>Apagar</a></td>";
         echo "</tr>";
