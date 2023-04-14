@@ -8,7 +8,7 @@
 <?php
 include 'conectar.php';
 include 'validar-cpf.php';
-$msgCpf = $id = $nome = $email = $cpf = $sexo = "";
+$msgCpf = $id = $nome = $email = $cpf = $escolaridade = $sexo = "";
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if (array_key_exists('id',$_GET)){
         $id = $_GET['id'];
@@ -16,7 +16,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $nome = $pessoa['nome'];
         $email = $pessoa['email'];
         $cpf = $pessoa['cpf'];
+        $escolaridade = $pessoa['escolaridade'];
         $sexo = $pessoa['sexo'];
+        
     }
     if (array_key_exists('apagar',$_GET)){
         $apagar = $_GET['apagar'];
@@ -28,15 +30,17 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $cpf = $_POST['cpf'];
+    $cpf = $_POST['cpf']; 
+    $escolaridade = $_POST['escolaridade'];
     $sexo = $_POST['sexo'];
     $id = $_POST['id'];
+   
     
     if(validarCpf($cpf)){
         if($id == ''){
-            $msg = incluir($nome, $email, $cpf, $sexo);
+            $msg = incluir($nome, $email, $cpf, $escolaridade, $sexo);
         } else {
-            $msg = alterar($id, $nome, $email, $cpf, $sexo);
+            $msg = alterar($id, $nome, $email, $cpf, $escolaridade, $sexo);
         }
     }else{
         $msgCpf = "CPF inválido!";
@@ -61,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="number" name="cpf" placeholder="000.000.000-00" value="<?php echo $cpf; ?>" required><br><br>
     
     <label>Escolaridade: </label>
-    <select name="Escolaridade" value="<?php echo $email; ?>"> 
+    <select name="escolaridade" value="<?php echo $escolaridade; ?>"> 
         <option value="">Selecione</option>
         <option value="">Ensino Médio</option>
         <option value="">Superior Incompleto</option>
@@ -72,12 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="radio" name="sexo" value="m" required<?php if($sexo == "m") echo "checked"; ?>>Masculino
     <input type="radio" name="sexo" value="f" required<?php if($sexo == "f") echo "checked"; ?>>Feminino
     <br><br>
-
+   
     <label>Senha: </label>
-    <input type="number" name="senha" placeholder="Senha" value="<?php echo ""; ?>" required><br><br>
+    <input type="number" name="senha" placeholder="Senha" value="<?php echo ""; ?>" ><br><br>
    
     <label>Confirmar: </label>
-    <input type="number" name="senha" placeholder="Senha" value="<?php echo ""; ?>" required><br><br>
+    <input type="number" name="senha" placeholder="Senha" value="<?php echo ""; ?>" ><br><br>
 
     <input type="submit" value="Gravar">
     <a href="form-pessoa.php">
@@ -99,6 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <th>Nome</th>
         <th>Email</th>
         <th>CPF</th>
+        <th>Escolaridade</th>
         <th>Sexo</th>
         
     </tr>
@@ -110,6 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<td>".$linha['nome']."</td>";
         echo "<td>".$linha['email']."</td>";
         echo "<td>".$linha['cpf']."</td>";
+        echo "<td>".$linha['escolaridade']."</td>";
         echo "<td>".$linha['sexo']."</td>";
         echo "<td><a href='form-pessoa.php?id=".$linha['id']."'>Editar</a></td>";
         echo "<td><a href='form-pessoa.php?apagar=".$linha['id']."'>Apagar</a></td>";
