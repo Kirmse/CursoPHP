@@ -1,0 +1,75 @@
+------- SQL -------
+
+SQL (Linguagem de consulta estruturada) é uma linguagem para banco de dados relacional, 
+a mais comum ultilizada para banco de dados.
+
+SQL FORMAS DE USAR
+    
+    SELECT * FROM Customers;
+        O "*" vai retonar todas as colunas.
+        O "Costumers" são os clientes
+
+    SQL pode estar dividida em DDL (lingual de definição de dados) e DML (lingal de manipulação de dados)
+    Principais comandos:
+       
+        DDL
+            CREATE
+            ALTER 
+            DROP
+
+        DML
+            INSERT 
+            SELECT
+            UPDATE 
+            DELETE 
+    
+    SQL Statement:
+
+            SELECT Country FROM [Customers] = vai mostrar todos os países até os repitidos
+            SELECT distinctc Country FROM [Customers] = mostra os países sem repetir
+
+            GROUP BY Country = mostra quantos países repetidos existem 
+
+
+        Cláusula WHERE = é importante
+            Cláusula LIKE = é uso na Cláusula do WHERE mas q server pra pesquisar qualquer caractere ou numero específico
+                exemplo: 
+                    SELECT * FROM Products WHERE ProductsName LIKE '%a%'
+                
+                aqui ele vai pesquisar tudo o que contem a letra "a" na tabela.
+            
+            Cláusula IN = é tipo o OR só que tudo junto.
+                exemplo:
+                    SELECT * FROM Employees WHERE FirstName IN ('Steven','Laura')
+
+            Cláusula AND = Não pode ser usada para buscar 2 nomes ou números que sejam da mesma coluna.
+
+
+        
+
+
+Valo NULL: é aquele que não é igual a 0 ou espaço vazio como " ", mas sim um espaço em branco.
+
+
+Select Top ->
+
+    Se quiser os cinco primeiro: SELECT TOP 5 * FROM [Customers];
+
+    SELECT CategoryID, COUNT(*), MIN(Price), MAX(Price), AVG(Price), SUM(Price) FROM Products GROUP BY CategoryID;
+        COUNT == contar // MIN == preço mínimo // AVG == média // SUM == soma dos produtos
+
+    Para apilidar uma tabela coloque o AS na frente, exemplo:
+    
+        SELECT 
+            CategoryID, 
+            COUNT(*), AS QUANTIDADE,
+            MIN(Price), AS MENOR,
+            MAX(Price), AS MAIOR,
+            AVG(Price), AS MEDIA,
+            SUM(Price) AS TOTAL
+        FROM 
+            Products 
+        GROUP BY 
+            CategoryID;
+
+ASSISTIR O RESTO DA VIDEO AULA, TEMP: 43:11 
