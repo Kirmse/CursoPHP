@@ -1,5 +1,5 @@
-Duvida 1º
-Dia: 11/04
-Vídeo: https://drive.google.com/file/d/1BHsnGn-FD-ir6UE5iDTQtoGit0FwDLEr/view
-Minuto: 10:04
-Motivo: Não consegui entender o raciocínio da validação do "cpf"
+Duvida 2º
+Dia: 19/04
+Vídeo: https://drive.google.com/file/d/1gP-mHWS2WTGMvSeTa0vdjtLJMNjX5czs/view
+Minuto: 30:03 
+Motivo: Não entendi o que o senhor fez e do porque.
