@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Pessoa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container">
 <?php
 include 'conectar.php';
 include 'validar-cpf.php';
-$msgCpf = $id = $nome = $email = $cpf = $sexo = $escolaridade=  "05987584108";
-$email = "kirmse2005@gmail.com";
+$msgCpf = $id = $nome = $email = $cpf = $sexo = $escolaridade=  "";
+$email = "@gmail.com";
 $id = "";
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if (array_key_exists('id',$_GET)){
@@ -63,43 +65,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="hidden" name="id"  value="<?php echo $id; ?>">
     
     <h1>Formulário de Pessoa</h1>
+    <div class="row">    
+    <div class="col-sm-6">
+        <label for="nome" class="form-label">Nome:</label>
+        <input id="nome" class="form-control" type="text" name="nome" value="<?php echo $nome; ?>" required ><br>
     
-    <label>Nome: </label>
-    <input type="text" name="nome" placeholder="Nome completo" value="<?php echo $nome; ?>" required><br><br>
+        <label for="email" class="form-label">E-mail:</label>
+        <input id="email" class="form-control" type="email" name="email" value="<?php echo $email; ?>" required><br>
     
-    <label>E-mail: </label>
-    <input type="text" name="email" placeholder="@gmail.com" value="<?php echo $email; ?>" required><br><br>
+        <label for="cpf" class="form-label">CPF:<?php echo $msgCpf; ?></label>
+        <input id="cpf" class="form-control" type="text" name="cpf" value="<?php echo $cpf; ?>" required><br>
+    </div>
     
-    <label>CPF: </label>
-    <input type="number" name="cpf" placeholder="000.000.000-00" value="<?php echo $cpf; ?>" required><br><br>
-    
-    <label>Escolaridade: </label>
-    <select name="escolaridade">
-        <option value="selecione">Selecione</option>
-        <option <?php if($escolaridade == "ensino-fundamental") {echo "selected"; }?> value="ensino-fundamental">Ensino Fundamental</option>
-        <option <?php if($escolaridade == "ensino-medio") {echo "selected"; }?> value="ensino-medio">Ensino Médio</option>
-        <option <?php if($escolaridade == "superior-imcompleto") {echo "selected"; }?> value="superior-imcompleto">Superior Incompleto</option>
-        <option <?php if($escolaridade == "superior-completo") {echo "selected"; }?> value="superior-completo">Superior Completo</option>
-    </select><br><br>
-    
-    <label>Sexo: </label>
-    <input type="radio" name="sexo" value="m" required<?php if($sexo == "m") echo "checked"; ?>>Masculino
-    <input type="radio" name="sexo" value="f" required<?php if($sexo == "f") echo "checked"; ?>>Feminino
-    <br><br>
+    <div class="col-sm-6">
+        <label for="escolaridade" class="form-label">Escolaridade:</label>
+            <select name="escolaridade" id="escolaridade" class="form-select">
+                <option value="">Selecione</option>
+                <option <?php if($escolaridade == "ensino-medio") { echo "selected"; }?> value="ensino-medio">Ensino Médio</option>
+                <option <?php if($escolaridade == "superior-incompleto") { echo "selected"; }?> value="superior-incompleto">Superior Incompleto</option>
+                <option <?php if($escolaridade == "superior-completo") { echo "selected"; }?> value="superior-completo">Superior Completo</option>
+            </select>
+            <br>
+        <label class="form-label">Sexo:</label>
+        <div class="form-check">
+                <input id="sexo-m" class="form-check-input" type="radio" name="sexo" value="m" required <?php if($sexo == "m") echo "checked"; ?>>
+                <label for="sexo-m" class="form-check-label">Masculino</label> 
+            </div>
+            <div class="form-check">
+                <input id="sexo-f" class="form-check-input" type="radio" name="sexo" value="f" required <?php if($sexo == "f") echo "checked"; ?>>
+                <label for="sexo-f" class="form-check-label">Feminino</label>
+            </div>
+            <br>
+        </div>
+    </div>
+    <br>
+    <?php if ($id =='') { ?>
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="senha" class="form-label">Senha: </label>
+                <input id=  "senha" class="form-control" type="password" name="senha" placeholder="Senha" required><br>
+            </div>
 
-     
-    <?php if (!isset($_GET['id'])) { ?>
-        <label>Senha: </label>
-        <input type="password" name="senha" placeholder="Senha" required><br><br>
-    
-        <label>Confirmar: </label>
-        <input type="password" name="confirmar" placeholder="Confirmar" required><br><br>
+            <div class="col-sm-6">
+                <label for="confirmar" class="form-label">Confirmar: </label>
+                <input id="confirmar" class="form-control" type="password" name="confirmar" placeholder="Confirmar" required><br>
+            </div>
+            
+        </div>
     <?php } ?> 
-    <input type="submit" value="Gravar">
-    <a href="form-pessoa.php">
-    <input type="button" value="Novo">
-    </a>
     
+    
+    
+    <input type="submit" value="Gravar" class="btn btn-success">
+    <a href="form-pessoa.php" class="btn btn-secondary">
+        Novo
+    <!-- <input type="button" value="Novo" > -->
+    </a>
+    <input id="mostra-tb" type="button" value="Tabela" class="btn btn-outline-info" onclick="mostrarTabela()">
 </form>
     
 <?php
@@ -109,13 +131,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <br>
 <br>
-<table border="1">
+
+<table class="table table-hover table-striped" id="tabela">
     <tr>
         <th>Id</th>
         <th>Nome</th>
         <th>Email</th>
         <th>CPF</th>      
         <th>Sexo</th>
+        <th colspan="2">Ações</th>
         
     </tr>
     <?php
@@ -127,11 +151,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<td>".$linha['email']."</td>";
         echo "<td>".$linha['cpf']."</td>";
         echo "<td>".$linha['sexo']."</td>";
-        echo "<td><a href='form-pessoa.php?id=".$linha['id']."'>Editar</a></td>";
-        echo "<td><a href='form-pessoa.php?apagar=".$linha['id']."'>Apagar</a></td>";
+        echo "<td><a class='btn btn-outline-warning btn-sm' href='form-pessoa.php?id=".$linha['id']."'>✏</a></td>";
+        echo "<td><a class='btn btn-outline-danger btn-sm' onclick='return apagar(".$linha['id'].");' href='form-pessoa.php?apagar=".$linha['id']."'>🗑</a></td>";
         echo "</tr>";
     }
     ?>
 </table>
+</div>
+<script>
+    function mostrarTabela(){
+        if(mostratb){
+            document.getElementById("tabela").style.display = '';
+            mostratb = false;
+            document.getElementById("mostra-tb").value = "Ocultar Tabela";
+        }else{
+            document.getElementById("tabela").style.display = 'none'; 
+            mostratb = true;
+            document.getElementById("mostra-tb").value = "Mostrar Tabela";
+        }
+    }
+    var mostratb = false;
+    mostarTabela();
+</script>
 </body>
 </html>
