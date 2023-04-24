@@ -35,6 +35,8 @@
                 Cláusula LIKE = é uso na Cláusula do WHERE mas q server pra pesquisar qualquer caractere ou numero específico
                     exemplo: 
                         SELECT * FROM Products WHERE ProductsName LIKE '%a%'
+                    E quando voce quer pesquisar algo que NÃO contenha tal caractere:
+                        SELECT * FROM Products WHERE ProductsName NOT LIKE '%a%'
                     
                     aqui ele vai pesquisar tudo o que contem a letra "a" na tabela.
                 
