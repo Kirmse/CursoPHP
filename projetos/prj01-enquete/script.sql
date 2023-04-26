@@ -11,7 +11,7 @@ create table resposta(
     foreign key (id_enquete) references enquete(id)
 );
 
--- insert de uma nova enquere e respostas
+-- insert de uma nova enquete e respostas
 
 INSERT INTO enquete(nome) VALUES('Qual a sua linguagem de programação favorita?');
 
@@ -22,3 +22,5 @@ INSERT INTO resposta(id_enquete, nome, quantidade) VALUES(1,'Java',0);
 INSERT INTO resposta(id_enquete, nome, quantidade) VALUES(1,'PHP',0);
 INSERT INTO resposta(id_enquete, nome, quantidade) VALUES(1,'JavaScript',0);
 INSERT INTO resposta(id_enquete, nome, quantidade) VALUES(1,'C++',0);
+--                                                        V       V
+--                                                        id      ?  

@@ -24,9 +24,9 @@
                     echo "<tr>
                         <td>$nome</td>
                         <td class='text-center' ><a href='responder-enquete.php?id-enquete=$id'
-                        class='btn btn-outline-primary btn-sm'>==</a></td>
+                        class='btn btn-outline-warning btn-sm' btn-sm'>✏</a></td>
                         <td class='text-center' ><a href='resultado.php?id-enquete=$id'
-                        class='btn btn-outline-primary btn-sm'>==</a></td>
+                        class='btn btn-outline-danger btn-sm' btn-sm'>📈</a></td>
                         </tr>";
                 }
 
@@ -35,5 +35,3 @@
     </div>
 </body>
 </html>
-
-http://localhost/PHP/projetos/prj01-enquete/index.php
