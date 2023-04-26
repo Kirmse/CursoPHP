@@ -89,3 +89,7 @@
 
 ---- BOOTSTRAP ----
 
+------- PHP -------
+    fetch_assoc() = ele vai ler o seu banco de dado, a variavel que vc quer q ele faça isso,
+    ele vai ler a coluna da tabela e depois irá ler linha por linha, assim tornando sua vaiável 
+    uma array
