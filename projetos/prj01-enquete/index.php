@@ -25,7 +25,7 @@
                         <td>$nome</td>
                         <td class='text-center' ><a href='responder-enquete.php?id-enquete=$id'
                         class='btn btn-outline-warning btn-sm' btn-sm'>✏</a></td>
-                        <td class='text-center' ><a href='resultado.php?id-enquete=$id'
+                        <td class='text-center' ><a href='resultado-enquete.php?id-enquete=$id'
                         class='btn btn-outline-danger btn-sm' btn-sm'>📈</a></td>
                         </tr>";
                 }

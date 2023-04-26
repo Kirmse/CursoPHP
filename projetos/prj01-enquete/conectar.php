@@ -6,8 +6,8 @@ function conectar($sql){
     
     $hostweb = false; // false para usar localhost, true para usar no 000webhost
     if ($hostweb) {
-        $id = ""; // id ou prefixo do 000webhost
-        $senha = ""; // senha do 000webhost
+        $id = "id20607593_"; // id ou prefixo do 000webhost
+        $senha = "p?w1amR=B~*f{!&j"; // senha do 000webhost
     }
 
     $servidor = "localhost";

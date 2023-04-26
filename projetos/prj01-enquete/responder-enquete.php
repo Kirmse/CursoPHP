@@ -16,7 +16,7 @@
             $id = $_POST['resposta'];
             $sql = "update respota set quantidade = quantidade + 1 where id = $id;";
             conectar($sql);
-            echo "<h2>Respota computada <a href='index.php' class='btn btn=secondary'>Voltar</a></h2>";
+            echo "<h2>Respota computada <a href='index.php' class='btn btn-secondary'>Voltar</a></h2>";
         }
 
         ?>
