@@ -1,0 +1,6 @@
+(seleciona) cntrl + ; = deixa em forma de anotação
+
+alt + shift + f = faz a concatenização
+
+alt + shift + seta pra baixo = copia e cola o código para baixo
+alt + seta pra baixo = move uma linha de código de lugar
