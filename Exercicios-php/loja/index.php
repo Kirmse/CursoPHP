@@ -44,7 +44,7 @@
                 <div class="card-body">
                     <h4 class="card-title">leite Ninho e Nutela</h4>
                     <div class="div1">R$: 45,00</div>
-                    <div class="div2"><a href="https://www.google.com/search?q=google+&client=opera-gx&hs=P5x&ei=rqZNZOfjKrCi1sQPnMmHgAI&ved=0ahUKEwjn8vzkndD-AhUwkZUCHZzkASAQ4dUDCA4&uact=5&oq=google+&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQigUQsQMQQzILCAAQgAQQsQMQgwEyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQMyCAgAEIAEELEDMg4IABCABBCxAxCDARDJAzIICAAQigUQkgMyCAgAEIoFEJIDMgsIABCABBCxAxCDAToKCAAQRxDWBBCwAzoKCAAQigUQsAMQQ0oECEEYAFA-WD5g_wFoAXABeACAAYYBiAGGAZIBAzAuMZgBAKABAcgBCsABAQ&sclient=gws-wiz-serp" class='btn btn-primary'>🛒</a></td>
+                    <div class="div2"><a href="https://soundcloud.com/iago-kirmse" class='btn btn-primary'>🛒</a></td>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Brugadeiro e Maracujá</h4>
                     <div class="div1">R$: 45,00</div>
-                    <div class="div2"><a href="https://www.google.com/search?q=google+&client=opera-gx&hs=P5x&ei=rqZNZOfjKrCi1sQPnMmHgAI&ved=0ahUKEwjn8vzkndD-AhUwkZUCHZzkASAQ4dUDCA4&uact=5&oq=google+&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQigUQsQMQQzILCAAQgAQQsQMQgwEyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQMyCAgAEIAEELEDMg4IABCABBCxAxCDARDJAzIICAAQigUQkgMyCAgAEIoFEJIDMgsIABCABBCxAxCDAToKCAAQRxDWBBCwAzoKCAAQigUQsAMQQ0oECEEYAFA-WD5g_wFoAXABeACAAYYBiAGGAZIBAzAuMZgBAKABAcgBCsABAQ&sclient=gws-wiz-serp" class='btn btn-primary'>🛒</a></td>
+                    <div class="div2"><a href="https://soundcloud.com/iago-kirmse" class='btn btn-primary'>🛒</a></td>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Brigadeiro e Limão</h4>
                     <div class="div1">R$: 45,00</div>
-                    <div class="div2"><a href="https://www.google.com/search?q=google+&client=opera-gx&hs=P5x&ei=rqZNZOfjKrCi1sQPnMmHgAI&ved=0ahUKEwjn8vzkndD-AhUwkZUCHZzkASAQ4dUDCA4&uact=5&oq=google+&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQigUQsQMQQzILCAAQgAQQsQMQgwEyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQMyCAgAEIAEELEDMg4IABCABBCxAxCDARDJAzIICAAQigUQkgMyCAgAEIoFEJIDMgsIABCABBCxAxCDAToKCAAQRxDWBBCwAzoKCAAQigUQsAMQQ0oECEEYAFA-WD5g_wFoAXABeACAAYYBiAGGAZIBAzAuMZgBAKABAcgBCsABAQ&sclient=gws-wiz-serp" class='btn btn-primary'>🛒</a></td>
+                    <div class="div2"><a href="https://soundcloud.com/iago-kirmse" class='btn btn-primary'>🛒</a></td>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Cocolate e Oreo</h4>
                     <div class="div1">R$: 45,00</div>
-                    <div class="div2"><a href="https://www.google.com/search?q=google+&client=opera-gx&hs=P5x&ei=rqZNZOfjKrCi1sQPnMmHgAI&ved=0ahUKEwjn8vzkndD-AhUwkZUCHZzkASAQ4dUDCA4&uact=5&oq=google+&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQigUQsQMQQzILCAAQgAQQsQMQgwEyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQMyCAgAEIAEELEDMg4IABCABBCxAxCDARDJAzIICAAQigUQkgMyCAgAEIoFEJIDMgsIABCABBCxAxCDAToKCAAQRxDWBBCwAzoKCAAQigUQsAMQQ0oECEEYAFA-WD5g_wFoAXABeACAAYYBiAGGAZIBAzAuMZgBAKABAcgBCsABAQ&sclient=gws-wiz-serp" class='btn btn-primary'>🛒</a></td>
+                    <div class="div2"><a href="https://soundcloud.com/iago-kirmse" class='btn btn-primary'>🛒</a></td>
                     </div>
                 </div>
             </div>
