@@ -93,7 +93,3 @@
     fetch_assoc() = ele vai ler o seu banco de dado, a variavel que vc quer q ele faça isso,
     ele vai ler a coluna da tabela e depois irá ler linha por linha, assim tornando sua vaiável 
     uma array
-
--------Anotações-------
-    Vídeo: https://drive.google.com/file/d/19u6TK2PF9oAtUqMjds_PrfMfFcUg9UtY/view
-    Minuto: 25:46
