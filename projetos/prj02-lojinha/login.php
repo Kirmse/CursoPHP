@@ -1,3 +1,6 @@
+<?php 
+include('validar-login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +14,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
-                <h2>Login</h2>
+                <h2>Login 
+                    <h5><?php echo $acesso; ?></h5>
+                </h2>
                 <form action="login.php" method="post">
                     <div>
                         <label for="email" class="form-label">Email:</label>

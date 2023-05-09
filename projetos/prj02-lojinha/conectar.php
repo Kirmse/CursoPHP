@@ -18,10 +18,7 @@ function conectar($sql){
     if($con->connect_error){
         die("Erro: ".$con->connect_error);
     }
-    // if(str_contains($sql,"inset")){
-    //     $con->query($sql);
-    //     return $con->insert_id;
-    // }
+    
     return $con->query($sql);
 }   
 
