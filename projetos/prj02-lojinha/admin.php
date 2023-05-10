@@ -45,13 +45,17 @@ include('gravar-produto.php');
                 if ($msg != "") {
                 ?>
                     <br>
-                    <div class="alert alert-<?php echo $$tpMsg; ?> alert-dismissible">
+                    <div class="alert alert-<?php echo $tpMsg; ?> alert-dismissible">
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         <strong><?php echo $msg; ?></strong>
                     </div>
             </div>
         <?php } ?>
         </div>
+
+        <?php 
+        include('listar-produto.php');
+        ?>
 
         <div class="col-10">
             <table class="table table-hover table-striped">

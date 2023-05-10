@@ -36,7 +36,7 @@ if(isset($_POST["submit"])) {
 
     // teste para tentar fazer o upload
     if($uploadOk == 0) {
-        $msgUpload .= "O arquivo não passou em nenhum teste. Tente novamente!";
+        $msgUpload .= "Deculpe, não foi possivel fazer o upload. Tente novamente!<br>";
     }else {
         if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$arquivo)) {
             // echo "Ok ao fazer o upload.";
