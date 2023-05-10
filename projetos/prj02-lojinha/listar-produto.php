@@ -22,8 +22,8 @@
                     <td>$nome</td>
                     <td><a href='$imagem' target='_blank' >🖼</a></td>
                     <td>$valor</td>
-                    <td> <a href='admin.php?aditar=$id'>✏</a></td>
-                    <td><a href='admin.php?aditar=$id'>🗑</a></td>
+                    <td> <a href='admin.php?editar=$id'>✏</a></td>
+                    <td><a href='admin.php?apagar=$id'>🗑</a></td>
                 </tr>";
             }
             ?>

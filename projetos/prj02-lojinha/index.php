@@ -44,10 +44,10 @@
         $resultado = conectar($sql);
         $i = 0;
         while ($linha = $resultado->fetch_assoc()) {
-            $nome = ["nome"];
-            $valor = ["valor"];
-            $imagem = ["imagem"];
-            $id = ["id"];
+            $nome = $linha["nome"];
+            $valor = $linha["valor"];
+            $imagem = $linha["imagem"];
+            $id = $linha["id"];
 
         ?>
             <div class="card">

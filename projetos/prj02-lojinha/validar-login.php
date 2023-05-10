@@ -5,7 +5,7 @@ session_start();
         include('conectar.php');
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        $retorno = conectar("select * from admim where email = '$email' and senha = '$senha';");
+        $retorno = conectar("select * from admin where email = '$email' and senha = '$senha';");
         if($linha = $retorno->fetch_assoc()){
             $_SESSION['acesso-restrito'] = true;
             echo "<script>window.location.replace('admin.php');</script>";

@@ -4,7 +4,7 @@ $mostrarFileAtual = "hidden";
 
 if(isset($_POST['submit'])){
     $id = $_POST["id"];
-    $gravar = false;
+    $gravar = true;
  
     $nome = $_POST["nome"];
     $valor = $_POST["valor"];
@@ -39,9 +39,9 @@ if(isset($_POST['submit'])){
  
     if($gravar) {
         if($id == ""){
-            $sql = "insert into produto(nome, valor, imagem) values('$nome','$valor','$arquivo')";
+            $sql = "insert into produto(nome, valor, imagem) values('$nome',$valor,'$arquivo')";
         }else {
-            $sql = "uptade produto set nome = '$nome', valor = $valor, imagem = '$arquivo' where id = $id";
+            $sql = "update produto set nome = '$nome', valor = $valor, imagem = '$arquivo' where id = $id";
             if($fileAtual != "" && $arquivo != "" && $fileAtual != $arquivo) {
                 unlink($fileAtual);
             }
@@ -57,11 +57,11 @@ if(isset($_POST['submit'])){
 }
 
 if (isset($_GET['editar'])) {
-    $id = $_GET['editaimagemr'];
+    $id = $_GET['editar'];
 }
 
 if($id != "") {
-    $sql = "select * produto where id = $id";
+    $sql = "select * from produto where id = $id";
     $result = conectar($sql);
     $linha = $result->fetch_assoc();
     $nome = $linha["nome"];
@@ -71,7 +71,7 @@ if($id != "") {
 }
 
 if(isset($_GET['apagar'])) {
-    $id = $_GET['pagar'];
+    $id = $_GET['apagar'];
     $sql = "select * from produto where id = $id";
     $result = conectar($sql);
     $linha = $result->fetch_assoc();

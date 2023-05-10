@@ -1,4 +1,4 @@
-CREATE TABLE adimin(
+CREATE TABLE admin(
     id int primary key auto_increment,
     email varchar(100) unique,
     senha varchar(100)
