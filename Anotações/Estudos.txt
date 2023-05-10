@@ -101,3 +101,7 @@ dia: 09/05
 criação novas: validar-login.php // validar-acesso.php // gravar-produto.php // admin.php // upload.php // listar-produto.php
 
 parei no minuto: 1:09:25
+
+dia: 10/05
+
+criações novas: index.php
