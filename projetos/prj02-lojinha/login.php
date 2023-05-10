@@ -27,7 +27,7 @@ include('validar-login.php');
                         <input type="password" class="form-control" id="senha" placeholder="Crie uma senha" name="senha">
                     </div><br>
                     <button type="submit" class="btn btn-primary">Enviar</button>
-                    <button type="submit" class="btn btn-secondary">Acessar Loja<a href="index.php"></a></button>
+                    <a type="submit" class="btn btn-secondary" href="index.php">Acessar Loja</a>
                 </form>
             </div>
         </div>

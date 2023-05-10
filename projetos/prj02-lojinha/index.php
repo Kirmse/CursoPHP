@@ -29,6 +29,11 @@
             right: 10px;
             bottom: 10px;
         }
+        #logout {
+            position: fixed;
+            right: 80px;
+            bottom: 10px;
+        }
 
         .up,
         .down {
@@ -37,7 +42,7 @@
     </style>
 
     <div class="container mt-3">
-        <h2 class="text-center">Doces da Vovó </h2>
+        <h2 class="text-center">One Piece Lojas </h2>
         <?php
         include("conectar.php");
         $sql = "select * from produto";
@@ -65,6 +70,7 @@
     </div>
 
     <a href="#" id="carrinho-principal" class="btn btn-primary btn-lg" onclick="carrinho()" data-bs-toggle="modal" data-bs-target="#myModal">🛒</a>
+    <a onclick="alert('Você foi deslogado!')" href="logout.php" id="logout" class="btn btn-danger">❕</a>
 
     <!-- The Modal -->
     <div class="modal" id="myModal">

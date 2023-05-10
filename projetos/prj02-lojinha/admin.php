@@ -39,7 +39,7 @@ include('gravar-produto.php');
                     <!--Botões -->
                     <button type="submit" class="btn btn-primary" name="submit">Enviar</button>
                     <a href="admin.php" class="btn btn-success">Novo</a>
-                    <a href="logout.php" class="btn btn-danger">Sair</a>
+                    <a onclick="alert('Você foi deslogado!')" href="logout.php" class="btn btn-danger">Sair</a>
                 </form><br>
                 <?php
                 if ($msg != "") {
