@@ -3,7 +3,7 @@
     $enquete = $_GET['nome-enquete'];
     $opcoes = $_GET['opcao'];
     
-    $sql = "inset into enquete(nome) values ('$enquete')";
+    $sql = "insert into enquete(nome) values ('$enquete')";
     conectar($sql);
     $sql = "select id from enquete where nome = '$enquete';";
     $retorno = conectar($sql);

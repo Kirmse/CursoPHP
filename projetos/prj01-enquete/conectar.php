@@ -19,6 +19,7 @@ function conectar($sql){
     if ($con->connect_error) {
         die("Erro: ".$con->connect_error);
     } 
+    // echo $sql;
     return $con->query($sql);
     
 }
