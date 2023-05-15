@@ -2,7 +2,53 @@ Sistema Gerenciador de Tarefas
 
 requisitos:
 
--Página de Login
--Página Criar conta
--Página principal
--
+- Página de Login : precisa de "email" e "senha" para acessar a Página
+
+- Página Criar conta: se registrar com "email" e "senha"
+
+- Página principal: Onde fica o Sistema de Gerenciador de tarefas (página restrita)
+
+- Criação de Tarefas: o nome ja diz.
+
+- Visualização de Tarefas: o nome ja diz.
+
+- Atualização de Tarefas: o nome ja diz.
+
+- Exclusão de Tarefas: antes da exclusão, uma mensagem de alerta precisa aparecer antes.
+
+- Página Atualizar Senha: para alterar a senha o usuário precisa estar logado
+
+- Sair: Logout
+
+
+Ordem de pastas:
+
+- script.sql
+- conectar.php
+
+- login.php
+- validar-login.php
+
+- criar-conta.php
+- form-alterar-senha.php
+
+- admin.php
+- validar-acesso.php
+
+- gravar-tarefa.php
+- nova-tarefa.php
+- listar-tarefa.php
+
+-logout.php
+
+Tableas: 
+
+tabela: contas
+
+colunas: id, email, senha.
+
+
+tabela: tarefa
+
+colunas: id, anotacao.
+
