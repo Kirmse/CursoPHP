@@ -1,0 +1,8 @@
+Sistema Gerenciador de Tarefas
+
+requisitos:
+
+-Página de Login
+-Página Criar conta
+-Página principal
+-
