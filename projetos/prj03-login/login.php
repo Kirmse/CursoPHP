@@ -18,11 +18,11 @@
                 <form action="login.php" method="post">
                     <div>
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="@gmail.com" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="@gmail.com" name="email" required>
                     </div>
                     <div><br>
                         <label for="senha" class="form-label">Senha:</label>
-                        <input type="password" class="form-control" id="senha" placeholder="****" name="senha">
+                        <input type="password" class="form-control" id="senha" placeholder="****" name="senha" required>
                     </div><br>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                     <a href="criar-conta.php" class="btn btn-outline-primary">Criar Conta</a>
