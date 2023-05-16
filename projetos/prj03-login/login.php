@@ -12,13 +12,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
-                <h2>Login</h2>
+                <br><h2>Login 
+                    <h5><?php echo $acesso; ?></h5>
+                </h2><br>
                 <form action="login.php" method="post">
                     <div>
                         <label for="email" class="form-label">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="@gmail.com" name="email">
                     </div>
-                    <div>
+                    <div><br>
                         <label for="senha" class="form-label">Senha:</label>
                         <input type="password" class="form-control" id="senha" placeholder="****" name="senha">
                     </div><br>
