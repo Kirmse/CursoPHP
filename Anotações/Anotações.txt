@@ -23,11 +23,11 @@ requisitos:
 
 Ordem de pastas:
 
-- script.sql
-- conectar.php
+- script.sql  ✓
+- conectar.php ✓
 
-- login.php
-- validar-login.php
+- login.php ✓
+- validar-login.php ✓
 
 - criar-conta.php
 - form-alterar-senha.php
@@ -41,14 +41,19 @@ Ordem de pastas:
 
 -logout.php
 
-Tableas: 
 
-tabela: contas
+--------TABELA--------
 
-colunas: id, email, senha.
+CREATE TABLE usuario(
+    id int primary key auto_increment,
+    email varchar(100) unique,
+    senha varchar(100)
+);
 
-
-tabela: tarefa
-
-colunas: id, anotacao.
+CREATE TABLE tarefa(
+    id int primary key auto_increment,
+    id_usuario INT NOT NULL,
+    conteudo TEXT,
+    foreign key (id_usuario) references usuario(id)
+);
 
