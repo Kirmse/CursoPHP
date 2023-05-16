@@ -19,3 +19,4 @@ if (isset($_POST["email"])) {
         $acesso = "Acesso NeGaDo!";
     }
 }
+?>

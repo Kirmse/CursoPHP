@@ -1,3 +1,6 @@
+<?php
+include('conectar.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +12,11 @@
 <body>
     
     <style>
-        a{
+        #voltar{
             float: right;
         }
     </style>
+    
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
@@ -51,9 +55,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $confirmar = $_POST['confirmar'];
 
         if($senha === $confirmar) {
-
-            $sql = "insert into usuario(email,senha) values('$email','$senha')";
-            conectar($sql);
+            conectar("insert into usuario(email,senha) values('$email','$senha');");
             
             echo "<script>window.location.replace('login.php');</script>";
             $acesso = "Cadastrado com sucesso!";

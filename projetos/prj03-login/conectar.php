@@ -3,7 +3,7 @@ function conectar($sql){
     $id = "";
     $senha = "";
 
-    $hostweb = true;
+    $hostweb = false;
     if($hostweb){
         $id = "id20607593_"; 
         $senha = "p?w1amR=B~*f{!&j";
@@ -18,7 +18,18 @@ function conectar($sql){
     if($con->connect_error){
         die("Erro: ".$con->connect_error);
     }
-    echo $sql;
+    
+    $resultado = $con->query($sql);
+
+    if(!$resultado) {
+        die("Erro na consulta: ". $con->error);
+    }
+
+    $con->close();
+
+    return $resultado;
     return $con->query($sql);
+
+
 }
 ?>
