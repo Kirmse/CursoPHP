@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $confirmar = $_POST['confirmar'];
-
+        // confirmação das senhas
         if ($senha === $confirmar) {
             conectar("insert into usuario(email,senha) values('$email','$senha');");
 
