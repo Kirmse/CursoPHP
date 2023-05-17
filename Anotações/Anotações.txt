@@ -36,7 +36,6 @@ Ordem de pastas:
 - validar-acesso.php ✓
 
 - gravar-tarefa.php
-- nova-tarefa.php
 - listar-tarefa.php
 
 -logout.php
