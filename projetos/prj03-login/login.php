@@ -10,6 +10,12 @@ include('validar-login.php');
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        #senha{
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,9 +37,10 @@ include('validar-login.php');
                     <div><br>
                         <label for="senha" class="form-label">Senha:</label>
                         <input type="password" class="form-control" id="senha" placeholder="****" name="senha" required>
-                    </div><br>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div><br><br>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
                     <a href="criar-conta.php" class="btn btn-outline-primary">Criar Conta</a>
+                    <button class="btn btn-outline-dark" href="#" id="senha">Esqueci minha senha?</button>
 
                 </form>
             </div>
