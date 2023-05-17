@@ -29,11 +29,11 @@ Ordem de pastas:
 - login.php ✓
 - validar-login.php ✓
 
-- criar-conta.php
+- criar-conta.php ✓
 - form-alterar-senha.php
 
 - admin.php
-- validar-acesso.php
+- validar-acesso.php ✓
 
 - gravar-tarefa.php
 - nova-tarefa.php

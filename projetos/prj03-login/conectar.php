@@ -27,9 +27,7 @@ function conectar($sql){
 
     $con->close();
 
-    return $resultado;
-    return $con->query($sql);
-
+    return $resultado; 
 
 }
 ?>

@@ -8,15 +8,10 @@ if (isset($_POST["email"])) {
     $retorno = conectar("select * from usuario where email = '$email' and senha = '$senha';");
 
     if ($linha = $retorno->fetch_assoc()) {
-        $senhaHash = $linha['senha'];
-        if (password_verify($senha, $senhaHash)) {
-            $_SESSION['acesso-restrito'] = true;
-            echo "<script>window.location.replace('admin.php');</script>";
-        } else {
-            $acesso = "Acesso NeGaDo!";
-        }
+        $_SESSION['acesso-restrito'] = true;
+        echo "<script>window.location.replace('admin.php');</script>";
     } else {
-        $acesso = "Acesso NeGaDo!";
+        $acesso = "Acesso Negado!";
     }
 }
 ?>
