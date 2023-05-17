@@ -25,9 +25,10 @@ include('conectar.php');
                 <br>
                 <h2>Cadastrar conta <a id="voltar" href="login.php" class="btn btn-outline-danger">Voltar</a></h2><br>
                 <form action="criar-conta.php" method="post">
-                    <div>
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Exemplo123@gmail.com" name="email" required>
+                    <label for="email" class="form-label">Email:</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="email" placeholder="Coloque um email aqui" name="email" required>
+                        <span class="input-group-text">@exemplo.com</span>
                     </div><br>
                     <div>
                         <label for="senha" class="form-label">Senha:</label>
@@ -65,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             echo "As senhas não coincidem.";
         }
-    }else {
+    } else {
         echo "Preencha todas as colunas corretamente!";
     }
 }

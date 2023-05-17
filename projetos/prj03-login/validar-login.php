@@ -8,6 +8,7 @@ if (isset($_POST["email"])) {
     $retorno = conectar("select * from usuario where email = '$email' and senha = '$senha';");
 
     if ($linha = $retorno->fetch_assoc()) {
+        $_SESSION['id_usuario'] = $linha['id'];
         $_SESSION['acesso-restrito'] = true;
         echo "<script>window.location.replace('admin.php');</script>";
     } else {

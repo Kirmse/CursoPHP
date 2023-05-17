@@ -40,7 +40,7 @@ include('validar-login.php');
                     </div><br><br>
                     <button type="submit" class="btn btn-primary">Entrar</button>
                     <a href="criar-conta.php" class="btn btn-outline-primary">Criar Conta</a>
-                    <button class="btn btn-outline-dark" href="#" id="senha">Esqueci minha senha?</button>
+                    <a class="btn btn-outline-dark" href="form-alterar-senha.php" id="senha">Esqueci minha senha?</a>
 
                 </form>
             </div>

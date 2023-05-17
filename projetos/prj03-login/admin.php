@@ -1,3 +1,10 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include "validar-acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,16 +32,22 @@
                 </div>
                 <br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
+                    <!-- id -->
                     <input type="hidden" name="id" value="">
+                    
                     <div class="input-group">
+                        <!-- Enviar -->
                         <button type="submit" class="input-group-text">Enviar</button>
+                        <!-- Conteúdo -->
                         <input type="text" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo">
+                        <!-- Novo -->
                         <a class="btn btn-outline-success" href="admin.php">Novo</a>
                     </div>
                 </form>
             </div>
         </div>
         <br><br><br>
+        <!-- Tabela -->
         <table class="table table-secondary table-hover">
             <tbody>
                 <tr>
@@ -46,7 +59,6 @@
                 $retorno = conectar("select * from tarefa;");
                 while ($linha = $retorno->fetch_assoc()) {
                     $id = $linha['id'];
-                    $id_usuario = $linha['id_usuario'];
                     $conteudo = $linha['conteudo'];
                     echo "<tr>
                     <td >$conteudo</td>
