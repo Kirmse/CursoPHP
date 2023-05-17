@@ -25,11 +25,11 @@
                 </div>
                 <br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
-
+                    <input type="hidden" name="id" value="">
                     <div class="input-group">
                         <button type="submit" class="input-group-text">Enviar</button>
                         <input type="text" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo">
-                        <button class="btn btn-outline-success">Novo</button>
+                        <a class="btn btn-outline-success" href="admin.php">Novo</a>
                     </div>
                 </form>
             </div>
@@ -44,6 +44,16 @@
                 <?php
                 include "conectar.php";
                 $retorno = conectar("select * from tarefa;");
+                while ($linha = $retorno->fetch_assoc()) {
+                    $id = $linha['id'];
+                    $id_usuario = $linha['id_usuario'];
+                    $conteudo = $linha['conteudo'];
+                    echo "<tr>
+                    <td >$conteudo</td>
+                    <td class='text-center'><a href='admin.php?editar=$id'>🖋</a></td>
+                    <td><a href='admin.php?apagar=$id'>🗑</a></td>
+                    </tr>";
+                }
                 ?>
             </tbody>
         </table>
