@@ -2,11 +2,11 @@
 function conectar($sql){
     $id = "";
     $senha = "";
-
-    $hostweb = false;
-    if($hostweb){
-        $id = "id20607593_"; 
-        $senha = "p?w1amR=B~*f{!&j";
+    
+    $hostweb = false; // false para usar localhost, true para usar no 000webhost
+    if ($hostweb) {
+        $id = "id20607593_"; // id ou prefixo do 000webhost
+        $senha = "p?w1amR=B~*f{!&j"; // senha do 000webhost
     }
 
     $servidor = "localhost";
@@ -14,20 +14,12 @@ function conectar($sql){
     $banco = $id."mydb";
 
     $con = new mysqli($servidor, $usuario, $senha, $banco);
-    
-    if($con->connect_error){
+
+    if ($con->connect_error) {
         die("Erro: ".$con->connect_error);
-    }
+    } 
+    // echo $sql;
+    return $con->query($sql);
     
-    $resultado = $con->query($sql);
-
-    if(!$resultado) {
-        die("Erro na consulta: ". $con->error);
-    }
-
-    $con->close();
-
-    return $resultado; 
-
 }
 ?>

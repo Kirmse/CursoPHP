@@ -1,24 +1,53 @@
 <?php
-
-
 session_start();
-echo "ID do usuário: " . $_SESSION['id_usuario'];
-if ($_SERVER['REQUEST_METHOD'] === 'post') {
-    if (isset($_POST['conteudo'])) {
-        $conteudo = $_POST['conteudo'];
 
-        if (!empty($_SESSION['id_usuario'])) {
+echo "ID do usuário: " . $_SESSION['id_usuario'] . "<br>";
+
+if (isset($_POST['submit'])) {  // submit
+    echo "Submit clicado <br>";
+
+    if (isset($_POST['conteudo'])) { // conteúdo
+        $conteudo = $_POST['conteudo'];
+        echo "Conteudo ok <br>";
+
+        if (!empty($_SESSION['id_usuario'])) {  // id_usurario
             $idUsuario = $_SESSION['id_usuario'];
-            include "conectar.php";
-            $sql = "insert into tarefa(id_usuario, conteudo) values('$idUsuario','$conteudo');";
+            echo "ID do usuário: " . $_SESSION['id_usuario'] . "<br>";
+
+            include_once "conectar.php";
+            $sql = "insert into tarefa(conteudo,id_usuario) values('$conteudo',$idUsuario);";  // Insert
             conectar($sql);
-            echo "Gravado com sucesso!";
+
+            echo "<a href='admin.php'>Tudo certo!</a>";
         } else {
-            echo "ID do usuário não encontrado na sessão!";
+            echo "Não achei nenhum ID <br>";
         }
     } else {
-        echo "O campo de anotação está vazio!";
+        echo "Conteudo não ok <br>";
     }
 } else {
-    echo "Metodo ultilizado inválido.";
+    echo "Botão não foi clicado <br>";
+}
+
+if (isset($_GET['editar'])) {  // editar
+    $id = $_GET['editar'];
+}
+
+if ($id != "") {  // editar            fala que não indentifica a função conectar()
+    $sql = "select * from tarefa where id = $id;";
+    $resultado = conectar($sql);
+    if ($resultado === false) {
+        die("Erro ao executar a consulta: " . $con->error);
+    }
+    $linha = $resultado->fetch_assoc();
+    $conteudo = $linha["conteudo"];
+}
+
+if (isset($_GET['apagar'])) {
+    $id = $_GET['apagar'];
+    $sql = "delete from tarefa where id = $id;";
+    $resultado = conectar($sql);
+    if ($resultado === false) {
+        die("Erro ao executar a consulta: " . $con->error);
+    }
 }

@@ -3,6 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include "gravar-tarefa.php";
 include "validar-acesso.php";
 ?>
 <!DOCTYPE html>
@@ -34,12 +35,12 @@ include "validar-acesso.php";
                 <form action="admin.php" method="post" enctype="multipart/form-data">
                     <!-- id -->
                     <input type="hidden" name="id" value="">
-                    
+
                     <div class="input-group">
                         <!-- Enviar -->
-                        <button type="submit" class="input-group-text">Enviar</button>
+                        <button type="submit" class="input-group-text" name="submit">Enviar</button>
                         <!-- Conteúdo -->
-                        <input type="text" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo">
+                        <input type="text" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo" required>
                         <!-- Novo -->
                         <a class="btn btn-outline-success" href="admin.php">Novo</a>
                     </div>
@@ -56,13 +57,14 @@ include "validar-acesso.php";
                 </tr>
                 <?php
                 include "conectar.php";
-                $retorno = conectar("select * from tarefa;");
+                $sql = "select * from tarefa;";
+                $retorno = conectar($sql);
                 while ($linha = $retorno->fetch_assoc()) {
                     $id = $linha['id'];
                     $conteudo = $linha['conteudo'];
                     echo "<tr>
                     <td >$conteudo</td>
-                    <td class='text-center'><a href='admin.php?editar=$id'>🖋</a></td>
+                    <td><a href='admin.php?editar=$id'>🖋</a></td>
                     <td><a href='admin.php?apagar=$id'>🗑</a></td>
                     </tr>";
                 }
@@ -70,8 +72,8 @@ include "validar-acesso.php";
             </tbody>
         </table>
     </div>
-
-
+<?php echo "oi"; ?>             
+    
 </body>
 
 </html>
