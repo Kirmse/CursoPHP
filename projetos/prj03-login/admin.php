@@ -33,7 +33,7 @@ error_reporting(E_ALL);
             <div class="col-md-12">
                 <br>
                 <div class="text-center">
-                    <h1>Anotações diárias <a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a></h1>
+                    <h1>Anotações diárias <h5><?php echo $msg;?></h5><a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a></h1>
                 </div>
                 <br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
@@ -42,11 +42,11 @@ error_reporting(E_ALL);
 
                     <div class="input-group">
                         <!-- Enviar -->
-                        <button type="submit" class="input-group-text" name="submit">Enviar</button>
+                        <button type="submit" class="btn btn-outline-success" name="submit">Enviar</button>
                         <!-- Conteúdo -->
                         <input type="text" value="<?php echo $conteudo;?>" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo" required>
                         <!-- Novo -->
-                        <a class="btn btn-outline-success" href="admin.php">Novo</a>
+                        <a class="btn btn-outline-primary" href="admin.php">Novo</a>
                     </div>
                 </form>
             </div>
@@ -75,9 +75,7 @@ error_reporting(E_ALL);
                 ?>
             </tbody>
         </table>
-    </div>
-<?php echo "oi"; ?>             
-    
+    </div>   
 </body>
 
 </html>
