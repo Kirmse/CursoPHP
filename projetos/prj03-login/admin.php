@@ -1,10 +1,14 @@
 <?php
+$conteudo = $id = "";
+include "validar-acesso.php";
+include "conectar.php";
+include "gravar-tarefa.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include "gravar-tarefa.php";
-include "validar-acesso.php";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,13 +38,13 @@ include "validar-acesso.php";
                 <br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
                     <!-- id -->
-                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
 
                     <div class="input-group">
                         <!-- Enviar -->
                         <button type="submit" class="input-group-text" name="submit">Enviar</button>
                         <!-- Conteúdo -->
-                        <input type="text" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo" required>
+                        <input type="text" value="<?php echo $conteudo;?>" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo" required>
                         <!-- Novo -->
                         <a class="btn btn-outline-success" href="admin.php">Novo</a>
                     </div>
@@ -56,8 +60,8 @@ include "validar-acesso.php";
                     <th class="col-sm-1" colspan="2">Ações</th>
                 </tr>
                 <?php
-                include "conectar.php";
-                $sql = "select * from tarefa;";
+                
+                $sql = "select * from tarefa where id_usuario = $idUsuario;";
                 $retorno = conectar($sql);
                 while ($linha = $retorno->fetch_assoc()) {
                     $id = $linha['id'];

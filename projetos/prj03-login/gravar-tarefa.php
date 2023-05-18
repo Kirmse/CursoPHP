@@ -1,6 +1,6 @@
 <?php
-session_start();
-
+// session_start();
+$idUsuario = $_SESSION['id_usuario'];
 echo "ID do usuário: " . $_SESSION['id_usuario'] . "<br>";
 
 if (isset($_POST['submit'])) {  // submit
@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {  // submit
             $idUsuario = $_SESSION['id_usuario'];
             echo "ID do usuário: " . $_SESSION['id_usuario'] . "<br>";
 
-            include_once "conectar.php";
+            // include_once "conectar.php";
             $sql = "insert into tarefa(conteudo,id_usuario) values('$conteudo',$idUsuario);";  // Insert
             conectar($sql);
 
@@ -31,18 +31,19 @@ if (isset($_POST['submit'])) {  // submit
 
 if (isset($_GET['editar'])) {  // editar
     $id = $_GET['editar'];
-}
 
-if ($id != "") {  // editar            fala que não indentifica a função conectar()
-    $sql = "select * from tarefa where id = $id;";
-    $resultado = conectar($sql);
-    if ($resultado === false) {
-        die("Erro ao executar a consulta: " . $con->error);
+
+    if ($id != "") {  // editar            fala que não indentifica a função conectar()
+        $sql = "select * from tarefa where id = $id;";
+        $resultado = conectar($sql);
+        if ($resultado === false) {
+            die("Erro ao executar a consulta: " . $con->error);
+        }
+        $linha = $resultado->fetch_assoc();
+        $conteudo = $linha["conteudo"];
+        
     }
-    $linha = $resultado->fetch_assoc();
-    $conteudo = $linha["conteudo"];
 }
-
 if (isset($_GET['apagar'])) {
     $id = $_GET['apagar'];
     $sql = "delete from tarefa where id = $id;";
