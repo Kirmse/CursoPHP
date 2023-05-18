@@ -30,7 +30,8 @@ Ordem de pastas:
 - validar-login.php ✓
 
 - criar-conta.php ✓
-- form-alterar-senha.php
+- form-alterar-senha.php ✓
+- alterar-senha.php
 
 - admin.php ✓
 - validar-acesso.php ✓
