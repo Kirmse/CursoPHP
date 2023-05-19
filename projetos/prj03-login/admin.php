@@ -23,6 +23,9 @@ error_reporting(E_ALL);
         #logout {
             float: right;
         }
+        #alterar {
+            float: left;
+        }
     </style>
 
 </head>
@@ -33,14 +36,17 @@ error_reporting(E_ALL);
             <div class="col-md-12">
                 <br>
                 <div class="text-center">
-                    <h1>Anotações diárias <a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a></h1>
+                    <h1>Anotações diárias
+                        <a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a>
+                        <a class="btn btn-outline-dark" href="form-alterar-senha.php" id="alterar">Alterar senha</a>
+                    </h1>
                     <h5><?php echo $msg;?></h5>
                 </div>
-                <br><br>
+                <br><br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
                     <!-- id -->
                     <input type="hidden" name="id" value="<?php echo $id;?>">
-
+                    
                     <div class="input-group">
                         <!-- Enviar -->
                         <button type="submit" class="btn btn-outline-success" name="submit">Enter</button>

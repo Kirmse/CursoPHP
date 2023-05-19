@@ -10,12 +10,6 @@ include('validar-login.php');
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <style>
-        #senha{
-            float: right;
-        }
-    </style>
 </head>
 
 <body>
@@ -40,8 +34,6 @@ include('validar-login.php');
                     </div><br><br>
                     <button type="submit" class="btn btn-primary">Entrar</button>
                     <a href="criar-conta.php" class="btn btn-outline-primary">Criar Conta</a>
-                    <a class="btn btn-outline-dark" href="form-alterar-senha.php" id="senha">Alterar senha</a> 
-                    <!-- OBS: Aparecer somente quando logado -->
                 </form>
             </div>
         </div>

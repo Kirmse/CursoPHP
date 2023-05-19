@@ -50,7 +50,7 @@ include('conectar.php');
 </html>
 
 <?php
-
+// OBS: SISTEMA DE ID, LINK: https://classroom.google.com/c/NTkzNDQxMjEyMTA0/p/NTU0MDI5Mzg0NzY4/details
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // verificação de preenchimento dos campos
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $confirmar = $_POST['confirmar'];
-        // confirmação das senhas
+        // confirmação das senhas  
         if ($senha === $confirmar) {
             conectar("insert into usuario(email,senha) values('$email','$senha');");
 
