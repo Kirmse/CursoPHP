@@ -5,6 +5,7 @@ $msg = "";
 // echo "ID do usuário: " . $_SESSION['id_usuario'] . "<br>";
 
 if (isset($_POST['submit'])) {  // submit
+    $id = $_POST["id"];
     // echo "Submit clicado <br>";
 
     if (isset($_POST['conteudo'])) { // conteúdo
@@ -14,9 +15,13 @@ if (isset($_POST['submit'])) {  // submit
         if (!empty($_SESSION['id_usuario'])) {  // id_usurario
             $idUsuario = $_SESSION['id_usuario'];
             
-            $sql = "insert into tarefa(conteudo,id_usuario) values('$conteudo',$idUsuario);";  // Insert
-            conectar($sql);
+            if($id == "") {
+                $sql = "insert into tarefa(conteudo,id_usuario) values('$conteudo',$idUsuario);";  // Insert
+            }else{
+                $sql = "update tarefa set conteudo = '$conteudo' where id = $id;";
+            }
 
+            conectar($sql);
             $msg = "Gravado com sucesso!";
         } else {
             $msg = "Não achei nenhum ID <br>";
