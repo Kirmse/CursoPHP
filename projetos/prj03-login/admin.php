@@ -33,7 +33,8 @@ error_reporting(E_ALL);
             <div class="col-md-12">
                 <br>
                 <div class="text-center">
-                    <h1>Anotações diárias <h5><?php echo $msg;?></h5><a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a></h1>
+                    <h1>Anotações diárias <a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a></h1>
+                    <h5><?php echo $msg;?></h5>
                 </div>
                 <br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
