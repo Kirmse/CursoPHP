@@ -26,6 +26,9 @@ error_reporting(E_ALL);
         #alterar {
             float: left;
         }
+        #tabela {
+            background-color: black;
+        }
     </style>
 
 </head>
@@ -33,25 +36,26 @@ error_reporting(E_ALL);
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="text-center">
                 <br>
-                <div class="text-center">
-                    <h1>Anotações diárias
-                        <a id="logout" href="logout.php" class="btn btn-outline-danger">Sair</a>
-                        <a class="btn btn-outline-dark" href="form-alterar-senha.php" id="alterar">Alterar senha</a>
-                    </h1>
-                    <h5><?php echo $msg;?></h5>
-                </div>
+                <h1>
+                    Anotações diárias
+                    <a id="logout" href="logout.php" class="btn btn-outline-danger"> Sair</a> 
+                    <a class="btn btn-outline-dark" href="form-alterar-senha.php" id="alterar"> Alterar senha</a>
+                </h1>
+                <h5><?php echo $msg;?></h5>
+            </div>
+            <div class="col-md-10">
                 <br><br><br>
                 <form action="admin.php" method="post" enctype="multipart/form-data">
                     <!-- id -->
                     <input type="hidden" name="id" value="<?php echo $id;?>">
                     
                     <div class="input-group">
-                        <!-- Enviar -->
-                        <button type="submit" class="btn btn-outline-success" name="submit">Enter</button>
                         <!-- Conteúdo -->
                         <input type="text" value="<?php echo $conteudo;?>" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo" required>
+                        <!-- Enviar -->
+                        <button type="submit" class="btn btn-outline-success" name="submit">Enter</button>
                         <!-- Novo -->
                         <a class="btn btn-outline-primary" href="admin.php">Novo</a>
                     </div>
@@ -62,7 +66,7 @@ error_reporting(E_ALL);
         <!-- Tabela -->
         <table class="table table-secondary table-hover">
             <tbody>
-                <tr>
+                    
                     <th>Lista de anotações</th>
                     <th class="col-sm-1" colspan="2">Ações</th>
                 </tr>
@@ -76,9 +80,10 @@ error_reporting(E_ALL);
                     echo "<tr>
                     <td >$conteudo</td>
                     <td><a href='admin.php?editar=$id'>🖋</a></td>
-                    <td><a href='admin.php?apagar=$id'>🗑</a></td>
+                    <td><a href='admin.php?apagar=$id'>🗑</a></td>  
+                    
                     </tr>";
-                }
+                }                                                  // OBS: COLOCAR AVISO ANTES DE EXCLUIR
                 ?>
             </tbody>
         </table>
