@@ -1,4 +1,6 @@
 <?php
+include "validar-acesso.php";
+include "conectar.php";
 include "alterar-senha.php";
 ?>
 <!DOCTYPE html>
