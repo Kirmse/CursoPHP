@@ -2,6 +2,7 @@
 $conteudo = $id = "";
 include "validar-acesso.php";
 include "conectar.php";
+include "alterar-senha.php";
 include "gravar-tarefa.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -26,10 +27,25 @@ error_reporting(E_ALL);
         #alterar {
             float: left;
         }
-        #tabela {
+        /* #table {
             background-color: black;
-        }
+        } */
     </style>
+
+<script>
+    function confirmDelete(event) {
+        event.preventDefault(); // Evita o redirecionamento imediato
+
+        var confirmDelete = confirm("Tem certeza que deseja apagar?");
+
+        if (!confirmDelete) {
+            return;
+        }
+
+        window.location.href = event.target.href;
+    }
+</script>
+ 
 
 </head>
 
@@ -66,7 +82,7 @@ error_reporting(E_ALL);
         <!-- Tabela -->
         <table class="table table-secondary table-hover">
             <tbody>
-                    
+                <tr class="table-dark">
                     <th>Lista de anotações</th>
                     <th class="col-sm-1" colspan="2">Ações</th>
                 </tr>
@@ -80,10 +96,9 @@ error_reporting(E_ALL);
                     echo "<tr>
                     <td >$conteudo</td>
                     <td><a href='admin.php?editar=$id'>🖋</a></td>
-                    <td><a href='admin.php?apagar=$id'>🗑</a></td>  
-                    
+                    <td><a href='admin.php?apagar=$id' onclick='confirmDelete(event)'>🗑</a></td>  
                     </tr>";
-                }                                                  // OBS: COLOCAR AVISO ANTES DE EXCLUIR
+                }                                                 
                 ?>
             </tbody>
         </table>

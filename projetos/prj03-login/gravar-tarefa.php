@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {  // submit
 if (isset($_GET['editar'])) {  // editar
     $id = $_GET['editar'];
 
-
     if ($id != "") {  // editar          
         $sql = "select * from tarefa where id = $id;";
         $resultado = conectar($sql);
@@ -49,7 +48,7 @@ if (isset($_GET['editar'])) {  // editar
 if (isset($_GET['apagar'])) {  //apagar
     $id = $_GET['apagar'];
     $sql = "delete from tarefa where id = $id;";
-    $resultado = conectar($sql);
+    $resultado =    conectar($sql);
     if ($resultado === false) {
         die("Erro ao executar a consulta: " . $con->error);
     }
