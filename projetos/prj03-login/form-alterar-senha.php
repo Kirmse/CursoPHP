@@ -1,3 +1,6 @@
+<?php
+include "alterar-senha.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,8 +36,9 @@
                         <label for="confirmar-senha" class="form-label">Confirmar senha:</label>
                         <input type="password" name="confirmar-senha" id="confirmar-senha" class="form-control" placeholder="*****">
                     </div>
-
-                    <button class="btn btn-success">Enviar</button>
+                    
+                    <button id="senha-submit" name="senha-submit" class="btn btn-success">Enviar</button>
+                    <br><?php echo $msg;?>
                 </form>
             </div>
         </div>
