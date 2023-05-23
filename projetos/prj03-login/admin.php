@@ -71,7 +71,7 @@ error_reporting(E_ALL);
                         <!-- Conteúdo -->
                         <input type="text" value="<?php echo $conteudo;?>" name="conteudo" class="form-control" placeholder="Escreva aqui sua anotações!" id="conteudo" required>
                         <!-- Enviar -->
-                        <button type="submit" class="btn btn-outline-success" name="submit">Enter</button>
+                        <button type="submit" class="btn btn-outline-success" name="submit">Enviar</button>
                         <!-- Novo -->
                         <a class="btn btn-outline-primary" href="admin.php">Novo</a>
                     </div>
