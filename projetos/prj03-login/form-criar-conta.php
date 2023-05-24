@@ -1,7 +1,6 @@
 <?php
-include('validar-login.php');
+include('criar-conta.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,31 +12,40 @@ include('validar-login.php');
 </head>
 
 <body>
+
+    <style>
+        #voltar {
+            float: right;
+        }
+    </style>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
                 <br>
-                <h2>Login
-                    <h5><?php echo $acesso; ?></h5>
-                </h2><br>
-                <form action="login.php" method="post">
-                    <!-- Email -->
+                <h2>Cadastrar conta <a id="voltar" href="login.php" class="btn btn-outline-danger">Voltar</a></h2>
+                <h5><?php echo $msg; ?></h5><br>
+                <form action="form-criar-conta.php" method="post">
                     <label for="email" class="form-label">Email:</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="email" placeholder="Seu email" name="email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Coloque um email aqui" name="email" required>
                         <span class="input-group-text">@exemplo.com</span>
-                    </div>
-                    <!-- Senha -->
-                    <div><br>
+                    </div><br>
+                    <div>
                         <label for="senha" class="form-label">Senha:</label>
                         <input type="password" class="form-control" id="senha" placeholder="****" name="senha" required>
-                    </div><br><br>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                    <a href="form-criar-conta.php" class="btn btn-outline-primary">Criar Conta</a>
+                    </div><br>
+                    <div>
+                        <label for="confirmar" class="form-label">Confimar senha:</label>
+                        <input type="password" class="form-control" id="confirmar" placeholder="****" name="confirmar" required>
+                    </div><br>
+
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </form>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
