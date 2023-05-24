@@ -4,12 +4,12 @@ $idUsuario = $_SESSION['id_usuario'];
 
 if(isset($_POST['senha-submit'])) { // submit
     $id = $_SESSION['id_usuario'];
-    echo $id;
-    $msg = "Ok";
+    // echo $id;
+    // $msg = "Ok";
 
     if(isset($_POST['senha-atual'])){ // verificação de senha
         $senhaAtual = $_POST['senha-atual'];
-        echo $senhaAtual;
+        // echo $senhaAtual;
 
         $sql = "select * from usuario where id = $id";
         $resultado = conectar($sql);
@@ -18,22 +18,21 @@ if(isset($_POST['senha-submit'])) { // submit
         $senha = $linha['senha'];
 
         if($senha === $senhaAtual) {  // verificação de compatibilidade
-            echo "Senha correta";
+            $msg = "Senha correta";
 
             if ($_POST['nova-senha'] == $_POST['confirmar-senha']){ // compatibilidade das senhas novas
-                echo "As senhas são as mesmas";
+                // echo "As senhas são as mesmas";
 
                 $senhaNova = $_POST['nova-senha'];
                 $sql = "update usuario set senha = $senhaNova where id = $id"; // enviar
                 conectar($sql);
+                $msg = "Alterado com sucesso!";
             } else {
-                echo "As senha não coincidem";
+                $msg = "As senha não coincidem";
             }
         } else {
-            echo "Senha incorreta!";
+            $msg = "Senha incorreta!";
         }
     }
 
-} else {
-    $msg = "Não submit";
 }

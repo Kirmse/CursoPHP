@@ -24,7 +24,8 @@ include "alterar-senha.php";
         <div class="row justify-content-center">
             <div class="col-6">
                 <br>
-                <h1>Alterar senha<a id="voltar" href="admin.php" class="btn btn-outline-danger">Voltar</a></h1><br>
+                <h1>Alterar senha<a id="voltar" href="admin.php" class="btn btn-outline-danger">Voltar</a></h1>
+                <h4><?php echo $msg;?></h4><br>
                 <form action="form-alterar-senha.php" method="post">
                     <div class="mb-3 mt-3">
                         <label for="senha-atual" class="form-label">Senha atual:</label>
@@ -40,7 +41,7 @@ include "alterar-senha.php";
                     </div>
                     
                     <button id="senha-submit" name="senha-submit" class="btn btn-success">Enviar</button>
-                    <br><?php echo $msg;?>
+                    <br>
                 </form>
             </div>
         </div>
